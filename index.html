@@ -1,37 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hola Jquery</title>
+    <title>Vue Js - Acamica</title>
 </head>
 <body>
-    <div class="app">
-    </div>
+    <div id="app">
+      {{ message }}
+      <input v-model="message">
+      <button v-on:click="seen = !seen">Open/Close</button>
 ​
-    <div class="app">
+      <span v-if="seen">Now you see me</span>
     </div>
-​
-    <div class="app">
-    </div>
-​
-    <div class="app">
-    </div>
-​
-    <div class="app">
-    </div>
-​
-    <input id="text">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        $( document ).ready(function() {
-            $('#app').append('Hola Jquery')
-​
-            $('#text').keyup(function () {
-                let empName = $('#text').val();
-                $('.app').text(empName);
-            });
-        });
+        var app = new Vue({
+          el: '#app',
+          data: {
+            message: 'Hello Vue!',
+            seen: false         
+          }
+        })
     </script>
 </body>
 </html>
