@@ -11,7 +11,11 @@
       <button v-on:click="seen = !seen">Open/Close</button>
 ​
       <span v-if="seen">Now you see me</span>
+      <span v-bind:title="message">Hover your mouse over me for a few seconds to see
+      my dinamically bound title</span>
+      <a v-bind:href="message">Link</a>
     </div>
+
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
